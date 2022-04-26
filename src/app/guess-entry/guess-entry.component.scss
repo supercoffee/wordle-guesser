@@ -1,0 +1,14 @@
+
+.form-group {
+
+  display: flex;
+  flex-direction: column;
+  label {
+    display: block;
+  }
+
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+}

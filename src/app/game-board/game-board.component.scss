@@ -1,0 +1,25 @@
+
+.board {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-row {
+  display: flex;
+
+  .letter {
+    background-color: #888888;
+    margin: 8px;
+    padding: 8px;
+    height: 2rem;
+    width: 2rem;
+
+    &.yellow {
+      background-color: #95b306;
+    }
+
+    &.green {
+      background-color: #1a8d04;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+
+
+<div class="form-group">
+
+  <label for="guess">Guess</label>
+  <input id=guess type="text" [formControl]="guessEntry">
+
+  <div class="error" *ngIf="guessEntry.dirty && guessEntry.invalid">
+    Guess must be 5 characters
+  </div>
+
+  <button (click)="submit()">Submit</button>
+</div>
