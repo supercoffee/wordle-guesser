@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {GameState} from "../GameState";
 
 @Component({
   selector: 'app-suggestions',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuggestionsComponent implements OnInit {
 
+  @Input() gameState!: GameState;
   constructor() { }
 
   ngOnInit(): void {
@@ -14,10 +16,6 @@ export class SuggestionsComponent implements OnInit {
 
   get suggestions() {
 
-    return [
-      'qwert',
-      'asdfg',
-      'zxcvb'
-    ]
+    return this.gameState.listSuggestions().slice(0, 10);
   }
 }
