@@ -24,4 +24,8 @@ export class GameBoardComponent implements OnInit {
   toggleLetterState(guess: Guess, index: number) {
     guess.toggleLetterState(index);
   }
+
+  deleteRow() {
+    this.gameState.removeGuess();
+  }
 }
