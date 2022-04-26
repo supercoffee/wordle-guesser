@@ -6,6 +6,7 @@
 
 .board-row {
   display: flex;
+  justify-content: center;
 
   .letter {
     background-color: #888888;
@@ -16,6 +17,12 @@
     padding: 8px;
     height: 2rem;
     width: 2rem;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
 
     &.yellow {
       background-color: #dedb04;

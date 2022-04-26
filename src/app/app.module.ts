@@ -6,12 +6,14 @@ import { GameBoardComponent } from './game-board/game-board.component';
 import { GuessEntryComponent } from './guess-entry/guess-entry.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameBoardComponent,
-    GuessEntryComponent
+    GuessEntryComponent,
+    SuggestionsComponent
   ],
   imports: [
     BrowserModule,
