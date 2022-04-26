@@ -2,12 +2,16 @@
 
 <form class="form-group" (keyup.enter)="submit($event)">
 
-  <label for="guess">Guess</label>
-  <input id=guess type="text" [formControl]="guessEntry">
 
-  <div class="error" *ngIf="guessEntry.dirty && guessEntry.invalid">
+  <mat-form-field class="">
+    <mat-label>Enter a guess</mat-label>
+    <input matInput id=guess type="text" [formControl]="guessEntry">
+
+  </mat-form-field>
+
+  <mat-error *ngIf="guessEntry.dirty && guessEntry.invalid">
     Guess must be 5 characters
-  </div>
+  </mat-error>
 
-  <button (click)="submit($event)">Submit</button>
+  <button mat-raised-button color="primary" (click)="submit($event)">Submit</button>
 </form>

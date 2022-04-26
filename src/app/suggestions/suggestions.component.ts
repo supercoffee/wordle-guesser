@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GameState} from "../GameState";
+import {MatSelectionListChange} from "@angular/material/list";
 
 @Component({
   selector: 'app-suggestions',
@@ -17,5 +18,12 @@ export class SuggestionsComponent implements OnInit {
   get suggestions() {
 
     return this.gameState.listSuggestions().slice(0, 10);
+  }
+
+  onSelect($event: MatSelectionListChange) {
+
+    const selected = $event.options[0].value;
+
+    this.gameState.appendGuess(selected);
   }
 }

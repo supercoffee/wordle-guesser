@@ -1,11 +1,21 @@
 
 
 <div class="container" *ngIf="gameState">
-  <app-game-board [gameState]="gameState"></app-game-board>
+  <section>
+    <app-game-board [gameState]="gameState"></app-game-board>
+  </section>
 
-  <app-guess-entry [gameState]="gameState"></app-guess-entry>
+  <section>
+    <app-guess-entry [gameState]="gameState"></app-guess-entry>
 
-  <app-suggestions [gameState]="gameState"></app-suggestions>
+
+  </section>
+
+
+  <section>
+    <app-suggestions [gameState]="gameState"></app-suggestions>
+
+  </section>
 </div>
 
 

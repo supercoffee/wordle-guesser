@@ -7,6 +7,11 @@ import { GuessEntryComponent } from './guess-entry/guess-entry.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { SuggestionsComponent } from './suggestions/suggestions.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -18,7 +23,13 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

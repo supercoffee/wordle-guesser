@@ -1,8 +1,16 @@
 
 
-<div class="suggestion-box">
+<mat-card>
 
-  <p *ngFor="let suggestion of suggestions">
-    {{ suggestion }}
-  </p>
-</div>
+  <mat-card-title>Suggestions</mat-card-title>
+
+  <mat-card-content>
+    <mat-selection-list [multiple]="false" (selectionChange)="onSelect($event)">
+
+      <mat-list-option *ngFor="let suggestion of suggestions" [value]="suggestion">
+        {{ suggestion }}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card-content>
+
+</mat-card>
