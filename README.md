@@ -10,6 +10,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * add support for quordle
 
 
+## building 
+
+```shell
+ng build --deploy-url /wordle-guesser/
+
+```
+
 # Angular stuff
 ## Development server
 
