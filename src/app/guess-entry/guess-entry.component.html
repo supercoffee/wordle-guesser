@@ -1,6 +1,6 @@
 
 
-<div class="form-group">
+<form class="form-group" (keyup.enter)="submit($event)">
 
   <label for="guess">Guess</label>
   <input id=guess type="text" [formControl]="guessEntry">
@@ -9,5 +9,5 @@
     Guess must be 5 characters
   </div>
 
-  <button (click)="submit()">Submit</button>
-</div>
+  <button (click)="submit($event)">Submit</button>
+</form>

@@ -20,7 +20,8 @@ export class GuessEntryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit() {
+  submit($event: any) {
+    $event.preventDefault();
     this.gameState.appendGuess(this.guessEntry.value);
     this.guessEntry.reset();
   }
