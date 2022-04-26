@@ -1,6 +1,10 @@
 
 
-<app-game-board [guesses]="guesses"></app-game-board>
+<div class="container" *ngIf="gameState">
+  <app-game-board [gameState]="gameState"></app-game-board>
 
-<app-guess-entry (guess)="appendGuess($event)"></app-guess-entry>
+  <app-guess-entry [gameState]="gameState"></app-guess-entry>
+
+</div>
+
 

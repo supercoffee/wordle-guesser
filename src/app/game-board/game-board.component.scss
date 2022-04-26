@@ -9,13 +9,16 @@
 
   .letter {
     background-color: #888888;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
     margin: 8px;
     padding: 8px;
     height: 2rem;
     width: 2rem;
 
     &.yellow {
-      background-color: #95b306;
+      background-color: #dedb04;
     }
 
     &.green {

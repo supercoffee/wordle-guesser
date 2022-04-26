@@ -1,9 +1,12 @@
-
 <div class="board">
 
-  <div class="board-row" *ngFor="let guess of guesses">
+  <div class="board-row" *ngFor="let guess of gameState.guesses">
 
-    <div class="letter" *ngFor="let letter of guess">
+    <div class="letter"
+         *ngFor="let letter of guess.guess; let i = index"
+         [ngClass]="letterClass(guess, i)"
+         (click)="toggleLetterState(guess, i)"
+    >
       {{ letter }}
     </div>
   </div>

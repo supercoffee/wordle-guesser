@@ -1,5 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
+import {GameState} from "../GameState";
 
 @Component({
   selector: 'app-guess-entry',
@@ -8,7 +9,7 @@ import {FormBuilder, FormControl, Validators} from "@angular/forms";
 })
 export class GuessEntryComponent implements OnInit {
 
-  @Output() guess = new EventEmitter();
+  @Input() gameState!: GameState;
 
   guessEntry: FormControl;
   constructor(private fb: FormBuilder) {
@@ -20,7 +21,7 @@ export class GuessEntryComponent implements OnInit {
   }
 
   submit() {
-    this.guess.emit(this.guessEntry.value);
+    this.gameState.appendGuess(this.guessEntry.value);
     this.guessEntry.reset();
   }
 }

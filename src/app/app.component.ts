@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WordlistService} from "./wordlist.service";
+import {GameState} from "./GameState";
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,7 @@ import {WordlistService} from "./wordlist.service";
 export class AppComponent implements OnInit{
   title = 'wordle-guesser';
 
-  guesses: string[][] = [];
-  private words: string[] = [];
+  gameState: GameState|null = null;
 
   constructor(private wordService: WordlistService) {
   }
@@ -18,12 +18,14 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
 
     this.wordService.getWordList().subscribe(
-      (words) => this.words = words
+      (words) => {
+        this.gameState = new GameState(words);
+      }
     )
 
   }
 
   appendGuess($event: string) {
-    this.guesses.push($event.split(''));
+    this.gameState?.appendGuess($event);
   }
 }
