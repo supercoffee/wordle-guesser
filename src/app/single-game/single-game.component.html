@@ -1,0 +1,16 @@
+<div class="container" *ngIf="gameState">
+  <section>
+    <app-game-board [gameState]="gameState"></app-game-board>
+  </section>
+
+  <section>
+    <app-guess-entry [gameState]="gameState"></app-guess-entry>
+
+
+  </section>
+
+  <section>
+    <app-suggestions [gameState]="gameState"></app-suggestions>
+
+  </section>
+</div>

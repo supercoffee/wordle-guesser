@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {WordlistService} from "./wordlist.service";
-import {GameState} from "./GameState";
 
 @Component({
   selector: 'app-root',
@@ -10,22 +8,11 @@ import {GameState} from "./GameState";
 export class AppComponent implements OnInit{
   title = 'wordle-guesser';
 
-  gameState: GameState|null = null;
-
-  constructor(private wordService: WordlistService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-
-    this.wordService.getWordList().subscribe(
-      (words) => {
-        this.gameState = new GameState(words);
-      }
-    )
-
   }
 
-  appendGuess($event: string) {
-    this.gameState?.appendGuess($event);
-  }
+
 }

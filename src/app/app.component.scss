@@ -1,11 +1,24 @@
+.navbar {
+  width: 100vw;
+  box-shadow: 16px 0 8px #bdbdbd;
 
-.container {
+  .navbar-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 
-  display: flex;
-  flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .navbar-item {
+    padding: 8px;
+    background-color: lightgray;
+  }
+}
 
-  max-width: 600px;
-  margin: 0 auto;
+
+main {
+  padding: 16px;
 }
 
 section {

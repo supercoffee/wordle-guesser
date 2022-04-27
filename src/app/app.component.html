@@ -1,21 +1,18 @@
+<div class="navbar">
 
-
-<div class="container" *ngIf="gameState">
-  <section>
-    <app-game-board [gameState]="gameState"></app-game-board>
-  </section>
-
-  <section>
-    <app-guess-entry [gameState]="gameState"></app-guess-entry>
-
-
-  </section>
-
-
-  <section>
-    <app-suggestions [gameState]="gameState"></app-suggestions>
-
-  </section>
+  <div class="navbar-items">
+    <div class="navbar-item">
+      <a routerLink="/"><span>Worlde</span></a>
+    </div>
+    <div class="navbar-item">
+      <a routerLink="./quordle"><span>Quordle</span></a>
+    </div>
+  </div>
 </div>
+
+
+<main>
+  <router-outlet></router-outlet>
+</main>
 
 

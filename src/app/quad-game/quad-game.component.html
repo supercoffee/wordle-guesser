@@ -1,0 +1,19 @@
+<div *ngIf="gameState">
+  <div class="quad-board">
+    <app-game-board [gameState]="gameState"></app-game-board>
+    <app-game-board [gameState]="gameState"></app-game-board>
+    <app-game-board [gameState]="gameState"></app-game-board>
+    <app-game-board [gameState]="gameState"></app-game-board>
+  </div>
+
+  <section>
+    <app-guess-entry [gameState]="gameState"></app-guess-entry>
+
+
+  </section>
+
+  <section>
+    <app-suggestions [gameState]="gameState"></app-suggestions>
+
+  </section>
+</div>

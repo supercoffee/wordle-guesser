@@ -4,9 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Todos
 
-* make suggestions clickable
 * prevent entry of non-words
-* make UI nice with material
+* implement entropy ranking for word suggestions
 * add support for quordle
 
 

@@ -1,0 +1,9 @@
+
+.quad-board {
+  display: flex;
+  flex-wrap: wrap;
+
+  app-game-board {
+    flex-basis: 50%;
+  }
+}
