@@ -1,6 +1,8 @@
 <div class="container" *ngIf="gameState">
   <section>
     <app-game-board [gameState]="gameState"></app-game-board>
+
+    <button mat-button color="warn" (click)="deleteRow()" *ngIf="gameState.guesses.length > 0">Delete Last Row</button>
   </section>
 
   <section>

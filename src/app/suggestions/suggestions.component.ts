@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GameState} from "../GameState";
+import {GameStateGuessEditable, GameStateListSuggestable, SingleGameState} from "../GameState";
 import {MatSelectionListChange} from "@angular/material/list";
 
 @Component({
@@ -9,7 +9,7 @@ import {MatSelectionListChange} from "@angular/material/list";
 })
 export class SuggestionsComponent implements OnInit {
 
-  @Input() gameState!: GameState;
+  @Input() gameState!: GameStateListSuggestable & GameStateGuessEditable;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GameState} from "../GameState";
+import {QuadGameState, SingleGameState} from "../GameState";
 import {WordlistService} from "../wordlist.service";
 
 @Component({
@@ -9,7 +9,7 @@ import {WordlistService} from "../wordlist.service";
 })
 export class QuadGameComponent implements OnInit {
 
-  gameState: GameState|null = null;
+  gameState: QuadGameState|null = null;
 
   constructor(private wordService: WordlistService) { }
 
@@ -17,9 +17,13 @@ export class QuadGameComponent implements OnInit {
 
     this.wordService.getWordList().subscribe(
       (words) => {
-        this.gameState = new GameState(words);
+        this.gameState = new QuadGameState(words);
       }
     )
 
+  }
+
+  deleteRow() {
+    this.gameState?.removeGuess();
   }
 }

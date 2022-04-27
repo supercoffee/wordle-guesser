@@ -1,6 +1,13 @@
+export interface GameStateGuessEditable {
+  appendGuess(guess: string): void;
+  removeGuess(): void;
+}
 
+export interface GameStateListSuggestable {
+  listSuggestions(): string[];
+}
 
-export class GameState {
+export class SingleGameState implements GameStateGuessEditable, GameStateListSuggestable{
 
   readonly guesses: Guess[] = [];
 
@@ -23,6 +30,37 @@ export class GameState {
     })
 
   }
+}
+
+export class QuadGameState  implements GameStateGuessEditable{
+  readonly states: SingleGameState[] = [];
+
+  constructor(private wordlist: string[]) {
+    this.states = [
+      new SingleGameState(wordlist),
+      new SingleGameState(wordlist),
+      new SingleGameState(wordlist),
+      new SingleGameState(wordlist),
+    ]
+  }
+
+  get guesses() : Guess[] {
+    return this.states.map(state => state.guesses).flat();
+  }
+  appendGuess(guess: string): void {
+    this.states.forEach(state => state.appendGuess(guess));
+  }
+
+  listSuggestions(): string[] {
+    const suggestions = this.states.map(state => state.listSuggestions());
+    return suggestions.flat();
+  }
+
+  removeGuess(): void {
+    this.states.forEach(state => state.removeGuess())
+  }
+
+
 }
 
 export class Guess {

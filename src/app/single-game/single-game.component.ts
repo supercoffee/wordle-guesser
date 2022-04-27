@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GameState} from "../GameState";
+import {SingleGameState} from "../GameState";
 import {WordlistService} from "../wordlist.service";
 
 @Component({
@@ -9,7 +9,7 @@ import {WordlistService} from "../wordlist.service";
 })
 export class SingleGameComponent implements OnInit {
 
-  gameState: GameState|null = null;
+  gameState: SingleGameState|null = null;
 
   constructor(private wordService: WordlistService) { }
 
@@ -17,7 +17,7 @@ export class SingleGameComponent implements OnInit {
 
     this.wordService.getWordList().subscribe(
       (words) => {
-        this.gameState = new GameState(words);
+        this.gameState = new SingleGameState(words);
       }
     )
 
@@ -25,5 +25,9 @@ export class SingleGameComponent implements OnInit {
 
   appendGuess($event: string) {
     this.gameState?.appendGuess($event);
+  }
+
+  deleteRow() {
+    this.gameState?.removeGuess();
   }
 }

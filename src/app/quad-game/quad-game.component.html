@@ -1,19 +1,20 @@
 <div *ngIf="gameState">
   <div class="quad-board">
-    <app-game-board [gameState]="gameState"></app-game-board>
-    <app-game-board [gameState]="gameState"></app-game-board>
-    <app-game-board [gameState]="gameState"></app-game-board>
-    <app-game-board [gameState]="gameState"></app-game-board>
+    <app-game-board *ngFor="let state of gameState.states" [gameState]="state"></app-game-board>
   </div>
 
-  <section>
-    <app-guess-entry [gameState]="gameState"></app-guess-entry>
+  <div class="container">
+    <button mat-button color="warn" (click)="deleteRow()" *ngIf="gameState.guesses.length > 0">Delete Last Row</button>
 
+    <section>
+      <app-guess-entry [gameState]="gameState"></app-guess-entry>
+    </section>
 
-  </section>
+    <section>
+      <app-suggestions [gameState]="gameState"></app-suggestions>
+    </section>
+  </div>
 
-  <section>
-    <app-suggestions [gameState]="gameState"></app-suggestions>
-
-  </section>
 </div>
+
+
